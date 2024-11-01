@@ -1,15 +1,19 @@
 package my.work.virtualclubcard.model;
 
-import lombok.Data;
 
-import java.util.List;
-@Data
-public class Template {
-    private Long id;
-    private String colorSchemes;
-    private String background;
-    private String style;
-
-
+public enum Template {
+    DEFAULT,
+    DARK,
+    SWISS,
+    MEMPHIS,
+    VINTAGE,
+    BAUHAUS,
+    ART_DECO,
+    MINIMALISM,
+    BRUTALISM,
+    ABSTRACT,
+    POP_ART,
+    RETRO,
+    CLASSIC
 }
 

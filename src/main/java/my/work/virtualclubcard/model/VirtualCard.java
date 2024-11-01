@@ -1,27 +1,44 @@
 package my.work.virtualclubcard.model;
 
-import lombok.Data;
+import jakarta.persistence.*;
+import lombok.*;
 
-import java.util.UUID;
+import java.util.Objects;
 
-@Data
+
+@Setter
+@Getter
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class VirtualCard {
-    private final String id;
-    private final Member member;
-    private final PrivilegeLevel privilegeLevel;
-    private final StatusMember statusMember;
-    private final Template template;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @OneToOne
+    private ClubMembers clubMembers;
 
 
-    public VirtualCard(Member member, PrivilegeLevel privilegeLevel, StatusMember statusMember, Template template) {
-        this.id = generateUniqueId();
-        this.member = member;
-        this.privilegeLevel = privilegeLevel;
-        this.statusMember = statusMember;
-        this.template = template;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        VirtualCard that = (VirtualCard) o;
+        return Objects.equals(id, that.id);
     }
 
-    private static String generateUniqueId() {
-        return UUID.randomUUID().toString();
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
+    }
+
+
+    @Override
+    public String toString() {
+        return "VirtualCard{" +
+                "id=" + id +
+                ", member=" + clubMembers +
+                '}';
     }
 }

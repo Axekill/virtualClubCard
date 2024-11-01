@@ -6,5 +6,5 @@ import lombok.Data;
 public class TemplatesPrivileges {
     private Long id;
     private Template template;
-    private PrivilegeLevel privilegeLevel;
+    private Privilege privilege;
 }

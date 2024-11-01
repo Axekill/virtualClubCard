@@ -1,6 +1,6 @@
 package my.work.virtualclubcard.model;
 
-public enum StatusMember {
+public enum Role {
     MEMBER,
     ADMIN
 }

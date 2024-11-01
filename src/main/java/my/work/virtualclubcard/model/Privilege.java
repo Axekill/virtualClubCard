@@ -1,6 +1,6 @@
 package my.work.virtualclubcard.model;
 
-public enum PrivilegeLevel {
+public enum Privilege {
     STANDARD,
     EXTRA,
     VIP
